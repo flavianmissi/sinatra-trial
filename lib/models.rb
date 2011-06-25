@@ -15,7 +15,7 @@ class Product
   property :description, Text
   property :created_at, DateTime
 
-  def self.create_or_update
+  def self.create_or_update(params)
     product = Product.first_or_create(params)
     product.save
   end

@@ -2,5 +2,9 @@
   %head
     %title ShowCase
   %body
+    -unless flash[:notice].nil?
+      #flash-msg=flash[:notice]
+    -unless flash[:warning].nil?
+      #flash-msg=flash[:warning]
     =yield
 

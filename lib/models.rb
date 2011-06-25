@@ -14,6 +14,11 @@ class Product
   property :resume, String
   property :description, Text
   property :created_at, DateTime
+
+  def self.create_or_update
+    product = Product.first_or_create(params)
+    product.save
+  end
 end
 
 DataMapper.auto_upgrade!

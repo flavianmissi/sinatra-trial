@@ -1,0 +1,12 @@
+%fieldset
+  %legend New Product
+  %form{:id => 'new_product', :action => url('/admin/products/new/'), :method => 'POST'}
+    %p
+      %label{:for => 'name'} Name
+      %input{:id => 'name', :name => 'name'}
+    %p
+      %label{:for =>'resume'} Resume
+      %textarea{:id => 'resume', :name => 'resume'}
+    %p
+      %label{:for =>'description'} Description
+      %textarea{:id => 'description', :name => 'description'}

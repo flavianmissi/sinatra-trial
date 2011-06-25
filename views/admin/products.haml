@@ -1,0 +1,6 @@
+-if @products.empty?
+  %p No products yet...
+-else
+  -@products.each do |product|
+    %p= product.name
+    %p= product.created_at

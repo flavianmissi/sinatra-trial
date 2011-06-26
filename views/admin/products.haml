@@ -1,10 +1,20 @@
--if @products.empty?
-  %p No products yet...
--else
-  -@products.each do |product|
-    %p= product.name
-    %p= product.created_at
-    %form{:action => url("/admin/products/#{product.id}/"), :method => 'POST'}
-      %input{:type => 'hidden', :name => '_method', :value => 'delete'}
-      %p
-        %input{:type => 'submit', :value => 'delete'}
+%table
+  %tr
+    %th.text-left Name
+    %th.text-center Created At
+    %th.text-center Actions
+  -if @products.empty?
+    %tr
+      %td No products yet...
+  -else
+    -@products.each do |product|
+      %tr
+        %td.text-left(width='40%')= product.name
+        %td.text-center(width='40%')= product.created_at
+        %td.text-center(width='20%')
+          .actions
+            %a.action.edit.left{:href => url("/admin/products/#{product.id}/edit/")} edit
+            %form.left{:action => url("/admin/products/#{product.id}/"), :method => 'POST'}
+              %input{:type => 'hidden', :name => '_method', :value => 'delete'}
+              %input{:type => 'submit', :value => 'delete'}
+            .clear

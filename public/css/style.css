@@ -1,0 +1,63 @@
+/*
+ * general
+ * containers
+ * tables
+ * buttons/links
+*/
+
+/* general */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+/* containers */
+#wrapper {
+  width: 960px;
+  margin: 15px auto;
+  color: #333;
+  font: 14px Arial;
+}
+
+.actions {
+  width: 100px;
+  margin: 0 auto;
+}
+
+/* tables */
+table, tr {
+  width: 960px;
+}
+
+#wrapper th {
+  font-size: 18px;
+}
+
+#wrapper th, #wrapper td {
+  padding: 5px 0 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* buttons/links */
+.action {
+  padding: 5px;
+}

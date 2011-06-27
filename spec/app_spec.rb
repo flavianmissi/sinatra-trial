@@ -1,10 +1,10 @@
 require File.expand_path('spec_helper', File.dirname(__FILE__))
 
-describe 'TestApp' do
+describe 'App' do
   include Rack::Test::Methods
 
   def app
-    Sinatra::Application
+    ShowCase
   end
 
   it 'should get the index and be success' do

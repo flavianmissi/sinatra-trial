@@ -1,10 +1,7 @@
 require 'sinatra'
 require 'data_mapper'
 require  'dm-migrations'
-
-database_path = File.expand_path('../showcase.db', File.dirname(__FILE__))
-DataMapper::Logger.new($stdout, :debug)
-DataMapper.setup(:default, "sqlite:#{database_path}")
+require File.expand_path('config', File.dirname(__FILE__))
 
 class Product
   include DataMapper::Resource

@@ -11,7 +11,6 @@ class ShowCase < Sinatra::Base
   enable :static
   use Rack::Flash
   set :public, File.expand_path('../public', File.dirname(__FILE__))
-  puts settings.public.inspect
 
   get '/' do
     haml :index

@@ -5,7 +5,7 @@
     %th.text-center Actions
   -if @products.empty?
     %tr
-      %td No products yet...
+      %td.text-center(colspan="3") No products yet...
   -else
     -@products.each do |product|
       %tr
@@ -18,3 +18,5 @@
               %input{:type => 'hidden', :name => '_method', :value => 'delete'}
               %input{:type => 'submit', :value => 'delete'}
             .clear
+
+%a.right.top-margin{:href => "/admin/products/new/"} new

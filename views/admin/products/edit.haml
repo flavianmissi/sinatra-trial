@@ -10,9 +10,10 @@
       %input{:type => 'text', :name => 'name', :value => "#{@product.name}"}
     %p
       %label{:for => 'resume'} Resume
-      %textarea{:name => 'resume', :value => "#{@product.resume}"}
+      %textarea{:name => 'resume'}= @product.resume
     %p
       %label{:for => 'description'} Description
-      %textarea{:name => 'description', :value => "#{@product.description}"}
+      %textarea{:name => 'description'}= @product.description
     %p
-      %input{:type => 'submit', :value => 'Save'}
+      %a.right{:href => '/admin/products/'} back
+      %input.right{:type => 'submit', :value => 'Save'}

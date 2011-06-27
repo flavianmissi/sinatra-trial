@@ -30,7 +30,8 @@ class ShowCase < Sinatra::Base
   end
 
   post '/admin/products/new/' do
-    if Product.create_or_update(params)
+    product = Product.new(params)
+    if product.save
       flash[:notice] = "Product successfully created"
     else
       flash[:warning] = "Could not save the product."
@@ -45,6 +46,17 @@ class ShowCase < Sinatra::Base
 
   delete '/admin/products/:id/' do
     Product.get(params[:id]).destroy
+    redirect '/admin/products/'
+  end
+
+  put '/admin/products/:id/' do
+    puts params
+    params.delete('_method')
+    if Product.update(params)
+      flash[:notice] = "Product updated successfully"
+    else
+      flash[:warning] = "Product could not be updated"
+    end
     redirect '/admin/products/'
   end
 

@@ -3,6 +3,7 @@
  * containers
  * tables
  * buttons/links
+ * headers
 */
 
 /* general */
@@ -61,3 +62,15 @@ table, tr {
 .action {
   padding: 5px;
 }
+
+/* headers */
+#wrapper h1 {
+  font-size: 22px
+}
+
+#wrapper h2 {
+  font-size: 20px;
+}
+ #wrapper h3 {
+  font-size: 18px;
+ }

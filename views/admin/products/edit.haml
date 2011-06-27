@@ -1,0 +1,18 @@
+-if @product.nil?
+  %p Product not found
+-else
+  %h3= "Editando #{@product.name}"
+
+  %form{:action => url("/admin/products/#{@product.id}/"), :method => 'POST'}
+    %input{:type => 'hidden', :name => '_method', :value => 'put'}
+    %p
+      %label{:for => 'name'} Name
+      %input{:type => 'text', :name => 'name', :value => "#{@product.name}"}
+    %p
+      %label{:for => 'resume'} Resume
+      %textarea{:name => 'resume', :value => "#{@product.resume}"}
+    %p
+      %label{:for => 'description'} Description
+      %textarea{:name => 'description', :value => "#{@product.description}"}
+    %p
+      %input{:type => 'submit', :value => 'Save'}
